@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Compare Cryptocurrencies | CryptoPulse</title>
+  <link rel="stylesheet" href="compare.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+
+<nav class="navbar">
+    <div class="logo">
+      CryptoPulse
+      <div class="subtitle">AI-Powered Predictions</div>
+    </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Dashboard</a></li>
+    <li><a href="coin-details.html">Coin Details</a></li>
+    <li><a href="predictions.html">Predictions</a></li>
+    <li class="active"><a href="compare.html">Compare</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="#" id="logoutBtn">Logout</a></li>
+
+  </ul>
+</nav>
+
+
+  
+  <div class="container">
+    <h1>Compare Cryptocurrencies</h1>
+    <p>Analyze and compare performance across multiple coins</p>
+
+    <div class="selector-box">
+      <h3>Select Cryptocurrencies (max 2)</h3>
+      <div class="coins">
+        <label><input type="checkbox" value="bitcoin"><span>Bitcoin (BTC)</span></label>
+        <label><input type="checkbox" value="ethereum"><span>Ethereum (ETH)</span></label>
+        <label><input type="checkbox" value="litecoin"><span>Litecoin (LTC)</span></label>
+        <label><input type="checkbox" value="binancecoin"><span>Binance Coin (BNB)</span></label>
+        <label><input type="checkbox" value="ripple"><span>Ripple (XRP)</span></label>
+      </div>
+      <button class="compare-btn">Compare</button>
+    </div>
+
+    <div class="card" id="top-performer">
+      <h3>🏆 Top Performer</h3>
+      <div id="performer-content">--</div>
+    </div>
+
+    <div class="card" id="side-by-side">
+      <h3>📊 Side-by-Side Metrics</h3>
+      <div id="metrics-content">--</div>
+    </div>
+
+    <div class="card">
+      <h3>📈 Price Comparison (Last 30 Days)</h3>
+      <canvas id="compareChart"></canvas>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>© 2025 CryptoPulse. Powered by LSTM Neural Networks.</p>
+    <p class="small">Data for demonstration purposes only. Not financial advice.</p>
+  </footer>
+
+  <script src="compare.js"></script>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+    if (isLoggedIn !== "true" || !loggedInUser) {
+      window.location.href = "login.html";
+      return;
+    }
+
+    
+    const logoutBtn = document.getElementById("logoutBtn");
+    if (logoutBtn) {
+      logoutBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        localStorage.removeItem("isLoggedIn");
+        localStorage.removeItem("loggedInUser");
+        window.location.href = "login.html";
+      });
+    }
+  });
+  </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | CryptoPulse</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+
+<body>
+  <div class="login-container">
+    <div class="login-card">
+      <div class="icon">📈</div>
+      <h2>Welcome back to <span>CryptoPulse</span> 👋</h2>
+      <p class="subtitle">Login to continue to your dashboard</p>
+
+      <form id="loginForm">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="you@example.com" required />
+
+        <div class="password-row">
+          <label for="password">Password</label>
+          <a href="#" class="forgot">Forgot?</a>
+        </div>
+        <input type="password" id="password" placeholder="Enter your password" required />
+
+        <button type="submit" class="btn-login">Login</button>
+
+        <div class="divider"><span>or</span></div>
+
+        <button type="button" class="btn-google">
+        Continue with Google
+        </button>
+
+        <p class="register-text">
+          Don't have an account? <a href="register.html">Register here</a>
+        </p>
+        <script src="login.js"></script>
+
+      </form>
+    </div>
+  </div>
+</body>
+</html>

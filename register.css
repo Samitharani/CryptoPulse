@@ -1,0 +1,153 @@
+body {
+  background-color: #0d0d0d;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 80px; 
+  margin: 0;
+  color: #fff;
+  overflow-y: auto; 
+}
+
+
+.register-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Logo section */
+.logo-icon {
+  font-size: 2.5rem;
+  background: #2563eb;
+  color: #fff;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.5);
+  margin-bottom: 1.5rem;
+}
+
+/* Register Card */
+.register-card {
+  background-color: #111;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  width: 380px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0.4rem;
+}
+
+h2 span {
+  color: #60a5fa;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: #a1a1aa;
+  margin-bottom: 1.5rem;
+}
+
+/* Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+label {
+  text-align: left;
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background-color: #1a1a1a;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+input:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+/* Button */
+.btn-primary {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover {
+  background: #1e40af;
+}
+
+/* Divider */
+.divider {
+  margin: 1rem 0;
+  position: relative;
+  text-align: center;
+  color: #666;
+}
+
+.divider span {
+  background: #111;
+  padding: 0 8px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Google Button */
+.google-btn {
+  background: transparent;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+
+.google-btn:hover {
+  border-color: #2563eb;
+  color: #60a5fa;
+}
+
+/* Bottom link */
+.login-link {
+  margin-top: 1rem;
+  color: #a1a1aa;
+  font-size: 0.9rem;
+}
+
+.login-link a {
+  color: #60a5fa;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+.register-container {
+  margin-bottom: 50px;
+}

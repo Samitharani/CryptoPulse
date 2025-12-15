@@ -1,0 +1,321 @@
+:root {
+  --btc: #f7931a;
+  --eth: #3c3c3d;
+  --ltc: #345c9c;
+  --bnb: #f3ba2f;
+  --xrp: #23292f;
+
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --text: #1a1a1a;
+  --muted: #7c849b;
+  --accent: #2563eb;
+  --btn-bg: #eef3ff;
+  --border: rgba(0, 0, 0, 0.05);
+}
+
+/* ---------------- DARK THEME ---------------- */
+body.dark-theme {
+  --bg: #0b0f19;
+  --card: #161b27;
+  --text: #f5f5f5;
+  --muted: #b3b8c6;
+  --accent: #3b82f6;
+  --btn-bg: #1e2539;
+  --border: rgba(255, 255, 255, 0.05);
+}
+
+/* ---------------- GLOBAL ---------------- */
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.container.coin-page {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 0 18px;
+}
+
+/* ---------------- HEADER ---------------- */
+.coin-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.coin-title {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.coin-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.coin-sub {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-top: 4px;
+}
+
+/* ---------------- CONTROLS ---------------- */
+.controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.controls select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--btn-bg);
+  color: var(--text);
+  transition: all 0.3s ease;
+}
+
+.controls select:hover {
+  border-color: var(--accent);
+}
+
+/* ---------------- CARD ---------------- */
+.card {
+  background: var(--card);
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 18px;
+  border: 1px solid var(--border);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ---------------- CHART TOP ---------------- */
+.chart-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.chart-title strong {
+  font-size: 1.1rem;
+}
+
+.chart-title .small {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-ghost:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* ---------------- TIMEFRAME CHIPS ---------------- */
+.toggle-btns .chip {
+  padding: 8px 10px;
+  border-radius: 18px;
+  border: none;
+  background: var(--btn-bg);
+  color: var(--text);
+  cursor: pointer;
+  margin-right: 6px;
+  transition: all 0.3s ease;
+}
+
+.toggle-btns .chip.active,
+.toggle-btns .chip:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* ---------------- CHART AREA ---------------- */
+.chart-wrap {
+  height: 340px;
+  position: relative;
+}
+
+.chart-wrap canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* ---------------- TABS ---------------- */
+.tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.tab {
+  background: var(--btn-bg);
+  border-radius: 24px;
+  padding: 10px 18px;
+  border: none;
+  cursor: pointer;
+  color: var(--text);
+  transition: all 0.3s ease;
+}
+
+.tab.active,
+.tab:hover {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* ---------------- TECHNICAL INDICATORS FIXED ---------------- */
+.indicators-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-top: 18px;
+}
+
+.indicator-card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#rsiChart,
+#macdChart {
+  width: 100% !important;
+  height: 210px !important;
+}
+
+/* ---------------- OHLC TABLE ---------------- */
+.table-wrap {
+  overflow: auto;
+  margin-top: 12px;
+}
+
+#ohlcTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#ohlcTable th,
+#ohlcTable td {
+  padding: 12px 10px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+#ohlcTable th {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* ---------------- NEWS ---------------- */
+.news-list .news-item {
+  background: var(--btn-bg);
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+.news-list .news-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.news-meta {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 8px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+}
+
+.badge.positive {
+  background: #e6fbea;
+  color: #1a9342;
+}
+
+.badge.neutral {
+  background: #e7f0ff;
+  color: #2563eb;
+}
+
+.badge.negative {
+  background: #ffe8e8;
+  color: #c0392b;
+}
+
+/* ---------------- FOOTER ---------------- */
+.footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 20px;
+  margin-top: 12px;
+}
+
+.tooltip {
+  position: fixed;
+  background: #111;
+  color: #fff;
+  padding: 8px 10px;
+  border-radius: 6px;
+  display: none;
+  pointer-events: none;
+  z-index: 9999;
+  font-size: 0.85rem;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 900px) {
+  .indicators-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-wrap {
+    height: 260px;
+  }
+}

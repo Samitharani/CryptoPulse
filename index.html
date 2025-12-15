@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CryptoPulse Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="light-theme">
+  <!--  NAVBAR -->
+   <nav class="navbar">
+    <div class="logo">
+      CryptoPulse
+      <div class="subtitle">AI-Powered Predictions</div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-item active">Dashboard</a></li>
+      <li><a href="coin-details.html" class="nav-item">Coin Details</a></li>
+      <li><a href="predictions.html" class="nav-item">Predictions</a></li>
+      <li><a href="compare.html" class="nav-item">Compare</a></li>
+      <li><a href="about.html" class="nav-item">About</a></li>
+      <li><a href="#" class="logout-btn">Logout</a></li>
+      <li>
+        <button id="themeToggle" class="theme-toggle">🌙</button>
+      </li>
+    </ul>
+  </nav>
+  
+
+  <!-- ================= AI CHATBOT ================= -->
+<div id="aiChatButton">
+  💬
+</div>
+
+<div id="aiChatPanel">
+  <div class="ai-header">
+    <span>CryptoPulse AI Assistant</span>
+    <button id="closeAI">✖</button>
+  </div>
+
+  <div id="aiMessages"></div>
+
+  <div class="ai-input-area">
+    <input type="text" id="aiInput" placeholder="Ask anything about crypto..." />
+    <button id="voiceBtn">🎤</button>
+    <button id="sendAI">➤</button>
+  </div>
+</div>
+<!-- ============================================== -->
+<script src="ai_chat.js"></script>
+
+
+  <!-- DASHBOARD CONTENT -->
+  <main class="dashboard">
+    <h2 class="section-title">Live Market Overview</h2>
+
+    <div class="coin-container">
+      <div class="coin-card btc">
+        <div class="coin-header">
+          <span class="coin-name">Bitcoin</span>
+          <span class="change">--</span>
+        </div>
+        <div class="price">$--</div>
+        <p class="coin-sub">Live Price Update</p>
+      </div>
+
+      <div class="coin-card eth">
+        <div class="coin-header">
+          <span class="coin-name">Ethereum</span>
+          <span class="change">--</span>
+        </div>
+        <div class="price">$--</div>
+        <p class="coin-sub">Live Price Update</p>
+      </div>
+
+      <div class="coin-card ltc">
+        <div class="coin-header">
+          <span class="coin-name">Litecoin</span>
+          <span class="change">--</span>
+        </div>
+        <div class="price">$--</div>
+        <p class="coin-sub">Live Price Update</p>
+      </div>
+
+      <div class="coin-card bnb">
+        <div class="coin-header">
+          <span class="coin-name">Binance Coin</span>
+          <span class="change">--</span>
+        </div>
+        <div class="price">$--</div>
+        <p class="coin-sub">Live Price Update</p>
+      </div>
+
+      <div class="coin-card xrp">
+        <div class="coin-header">
+          <span class="coin-name">Ripple</span>
+          <span class="change">--</span>
+        </div>
+        <div class="price">$--</div>
+        <p class="coin-sub">Live Price Update</p>
+      </div>
+    </div>
+
+    <!--  MARKET TREND CHART -->
+    <section class="market-section">
+      <div class="market-header">
+        <h2>Market Trends (30 Days)</h2>
+        <select id="coinSelector">
+          <option value="bitcoin">Bitcoin (BTC)</option>
+          <option value="ethereum">Ethereum (ETH)</option>
+          <option value="litecoin">Litecoin (LTC)</option>
+          <option value="binancecoin">Binance Coin (BNB)</option>
+          <option value="ripple">Ripple (XRP)</option>
+        </select>
+      </div>
+
+      <div class="market-chart-container">
+        <canvas id="marketChart"></canvas>
+      </div>
+
+      <!--  TOP MOVERS -->
+      <div class="top-movers-container">
+        <div class="top-movers gainers">
+          <h3>Top Gainers 🚀</h3>
+          <ul></ul>
+        </div>
+        <div class="top-movers losers">
+          <h3>Top Losers 📉</h3>
+          <ul></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+   <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+    if (isLoggedIn !== "true" || !loggedInUser) {
+      window.location.href = "login.html";
+      return;
+    }
+
+  
+    const logoutBtn = document.getElementById("logoutBtn");
+    if (logoutBtn) {
+      logoutBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        localStorage.removeItem("isLoggedIn");
+        localStorage.removeItem("loggedInUser");
+        window.location.href = "login.html";
+      });
+    }
+  });
+  </script>
+</body>
+</html>

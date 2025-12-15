@@ -1,0 +1,174 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #0e0e0e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
+}
+
+
+.login-card {
+  background-color: #1a1a1a;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.6);
+  width: 380px;
+  text-align: center;
+  animation: fadeIn 0.8s ease;
+}
+
+.icon {
+  background-color: #00bfff;
+  width: 60px;
+  height: 60px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 1.2rem;
+  font-size: 1.5rem;
+}
+
+
+h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.3rem;
+}
+
+h2 span {
+  color: #00bfff;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 1.5rem;
+}
+
+
+label {
+  display: block;
+  text-align: left;
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background-color: #0f0f0f;
+  color: #fff;
+}
+
+input:focus {
+  outline: none;
+  border-color: #00bfff;
+}
+
+
+.password-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.forgot {
+  font-size: 0.85rem;
+  color: #00bfff;
+  text-decoration: none;
+}
+
+
+.btn-login {
+  background-color: #0066ff;
+  border: none;
+  color: #fff;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-login:hover {
+  background-color: #0052cc;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 15px 0;
+  color: #666;
+}
+
+.divider::before, .divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #333;
+}
+
+.divider:not(:empty)::before {
+  margin-right: 10px;
+}
+
+.divider:not(:empty)::after {
+  margin-left: 10px;
+}
+
+
+.btn-google {
+  width: 100%;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: 0.3s;
+}
+
+.btn-google:hover {
+  background-color: #e5e5e5;
+}
+
+
+.register-text {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.register-text a {
+  color: #00bfff;
+  text-decoration: none;
+}
+
+.register-text a:hover {
+  text-decoration: underline;
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
